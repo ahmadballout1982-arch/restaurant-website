@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TechNova | حلول رقمية تصنع الفرق</title>
 
     <meta
         name="description"
-        content="NÉRAVA Restaurant — تجربة طعام فاخرة في عمّان تجمع بين النكهات الراقية والأجواء الاستثنائية"
+        content="TechNova شركة تقنية متخصصة في تطوير المواقع والتطبيقات والحلول الرقمية الذكية للشركات والأعمال"
     >
 
-    <title>NÉRAVA | تجربة طعام استثنائية في عمّان</title>
+    <meta
+        name="theme-color"
+        content="#07111f"
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -24,7 +34,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
@@ -33,50 +46,74 @@
          HEADER
     ========================== -->
 
-    <header class="site-header" id="header">
+    <header class="header" id="header">
 
-        <div class="container header-container">
+        <div class="container nav-container">
 
             <a href="#home" class="logo">
-                <span class="logo-main">NÉRAVA</span>
-                <span class="logo-sub">RESTAURANT & DINING</span>
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Tech<span>Nova</span>
+                </span>
+
             </a>
 
-            <nav class="main-nav" id="mainNav">
+            <nav class="nav" id="nav">
 
-                <a href="#home" class="nav-link active">الرئيسية</a>
-                <a href="#story" class="nav-link">قصتنا</a>
-                <a href="#menu" class="nav-link">القائمة</a>
-                <a href="#experience" class="nav-link">التجربة</a>
-                <a href="#gallery" class="nav-link">المعرض</a>
-                <a href="#reviews" class="nav-link">آراء الضيوف</a>
-                <a href="#contact" class="nav-link">تواصل معنا</a>
+                <a href="#home" class="nav-link active">
+                    الرئيسية
+                </a>
+
+                <a href="#services" class="nav-link">
+                    خدماتنا
+                </a>
+
+                <a href="#about" class="nav-link">
+                    من نحن
+                </a>
+
+                <a href="#projects" class="nav-link">
+                    أعمالنا
+                </a>
+
+                <a href="#process" class="nav-link">
+                    كيف نعمل
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    تواصل معنا
+                </a>
 
             </nav>
 
-            <a href="#reservation" class="header-reservation">
-                احجز طاولتك
-            </a>
+            <div class="nav-actions">
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="فتح القائمة"
-                type="button"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <a href="#contact" class="header-btn">
+                    ابدأ مشروعك
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
 
         </div>
 
     </header>
 
-
-    <!-- =========================
-         MAIN
-    ========================== -->
 
     <main>
 
@@ -86,448 +123,545 @@
 
         <section class="hero" id="home">
 
-            <div class="hero-overlay"></div>
+            <div class="hero-background">
 
-            <div class="hero-content container">
+                <div class="hero-grid"></div>
 
-                <span class="hero-kicker">
-                    تجربة طعام استثنائية
-                </span>
+                <div class="hero-glow glow-one"></div>
 
-                <h1>
-                    حيث تتحول النكهات
-                    <span>إلى تجربة</span>
-                </h1>
+                <div class="hero-glow glow-two"></div>
 
-                <p>
-                    في NÉRAVA نؤمن أن العشاء ليس مجرد وجبة
-                    بل لحظة تستحق أن تُعاش بكل تفاصيلها
-                </p>
+            </div>
 
-                <div class="hero-actions">
+            <div class="container hero-container">
 
-                    <a href="#menu" class="btn btn-primary">
-                        اكتشف قائمتنا
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="hero-content reveal">
 
-                    <a href="#reservation" class="btn btn-outline">
-                        احجز طاولتك
-                    </a>
+                    <div class="hero-badge">
+
+                        <span class="status-dot"></span>
+
+                        نبتكر حلولًا رقمية للمستقبل
+
+                    </div>
+
+                    <h1>
+
+                        نحول
+
+                        <span>الأفكار</span>
+
+                        إلى تجارب رقمية
+
+                        <strong>استثنائية</strong>
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        نساعد الشركات والأعمال على بناء حضور رقمي قوي
+                        من خلال مواقع إلكترونية حديثة، تطبيقات ذكية،
+                        وحلول تقنية مصممة لتحقيق نتائج حقيقية
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#contact"
+                            class="btn btn-primary"
+                        >
+                            ابدأ مشروعك الآن
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+
+                        <a
+                            href="#projects"
+                            class="btn btn-outline"
+                        >
+                            شاهد أعمالنا
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+
+                            <strong>+120</strong>
+
+                            <span>
+                                مشروعًا رقميًا
+                            </span>
+
+                        </div>
+
+                        <div class="trust-line"></div>
+
+                        <div class="trust-item">
+
+                            <strong>+85</strong>
+
+                            <span>
+                                عميلًا
+                            </span>
+
+                        </div>
+
+                        <div class="trust-line"></div>
+
+                        <div class="trust-item">
+
+                            <strong>98%</strong>
+
+                            <span>
+                                رضا العملاء
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO IMAGE -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="hero-image-wrapper">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90"
+                            alt="فريق تقني يعمل على تطوير حلول رقمية"
+                            class="hero-image"
+                        >
+
+                        <div class="hero-image-overlay"></div>
+
+                    </div>
+
+                    <div class="visual-orbit orbit-one"></div>
+
+                    <div class="visual-orbit orbit-two"></div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-top">
+
+                            <div class="dashboard-dots">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="dashboard-label">
+                                لوحة الأداء
+                            </div>
+
+                        </div>
+
+                        <div class="dashboard-main">
+
+                            <div class="analytics-header">
+
+                                <div>
+
+                                    <span>
+                                        نمو المشروع
+                                    </span>
+
+                                    <strong>
+                                        +42.8%
+                                    </strong>
+
+                                </div>
+
+                                <div class="analytics-icon">
+
+                                    <i class="fa-solid fa-chart-line"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div class="chart">
+
+                                <div class="chart-line">
+
+                                    <span style="height: 35%;"></span>
+                                    <span style="height: 48%;"></span>
+                                    <span style="height: 42%;"></span>
+                                    <span style="height: 60%;"></span>
+                                    <span style="height: 55%;"></span>
+                                    <span style="height: 76%;"></span>
+                                    <span style="height: 92%;"></span>
+
+                                </div>
+
+                                <div class="chart-labels">
+
+                                    <span>يناير</span>
+                                    <span>فبراير</span>
+                                    <span>مارس</span>
+                                    <span>أبريل</span>
+                                    <span>مايو</span>
+                                    <span>يونيو</span>
+                                    <span>يوليو</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="dashboard-stats">
+
+                                <div class="mini-stat">
+
+                                    <span>
+                                        المستخدمون
+                                    </span>
+
+                                    <strong>
+                                        24.8K
+                                    </strong>
+
+                                    <small>
+                                        <i class="fa-solid fa-arrow-up"></i>
+                                        18.4%
+                                    </small>
+
+                                </div>
+
+                                <div class="mini-stat">
+
+                                    <span>
+                                        التحويل
+                                    </span>
+
+                                    <strong>
+                                        8.72%
+                                    </strong>
+
+                                    <small>
+                                        <i class="fa-solid fa-arrow-up"></i>
+                                        6.8%
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-one">
+
+                        <div class="floating-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                تطوير ذكي
+                            </strong>
+
+                            <span>
+                                حلول مصممة لك
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-two">
+
+                        <div class="floating-icon green">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                أمان موثوق
+                            </strong>
+
+                            <span>
+                                حماية متقدمة
+                            </span>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="hero-scroll">
-                <span>اكتشف المزيد</span>
-                <i class="fa-solid fa-chevron-down"></i>
+
+            <div class="hero-bottom">
+
+                <div class="container">
+
+                    <div class="scroll-indicator">
+
+                        <span>
+                            اكتشف المزيد
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
 
 
         <!-- =========================
-             STORY
+             SERVICES
         ========================== -->
 
-        <section class="story section-padding" id="story">
-
-            <div class="container story-grid">
-
-                <div class="story-images">
-
-                    <div class="story-image story-image-main">
-                        <img
-                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-                            alt="أجواء مطعم NÉRAVA"
-                            loading="lazy"
-                        >
-                    </div>
-
-                    <div class="story-image story-image-small">
-                        <img
-                            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=85"
-                            alt="طبق فاخر"
-                            loading="lazy"
-                        >
-                    </div>
-
-                    <div class="story-badge">
-                        <strong>01</strong>
-                        <span>تجربة<br>استثنائية</span>
-                    </div>
-
-                </div>
-
-
-                <div class="story-content">
-
-                    <span class="section-kicker">
-                        قصتنا
-                    </span>
-
-                    <h2>
-                        شغفنا يبدأ
-                        <span>من التفاصيل</span>
-                    </h2>
-
-                    <p class="lead">
-                        NÉRAVA هو مفهوم يجمع بين المطبخ العصري
-                        والأجواء الراقية والخدمة التي تهتم بأدق التفاصيل
-                    </p>
-
-                    <p>
-                        نختار مكوناتنا بعناية ونقدمها بأسلوب يجمع
-                        بين البساطة والإبداع، لأننا نؤمن أن الطبق الرائع
-                        يبدأ من مكونات رائعة وينتهي بذكرى لا تُنسى
-                    </p>
-
-                    <div class="story-signature">
-                        <span>NÉRAVA</span>
-                        <small>Restaurant & Dining</small>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             MENU
-        ========================== -->
-
-        <section class="menu-section section-padding" id="menu">
+        <section
+            class="section services-section"
+            id="services"
+        >
 
             <div class="container">
 
-                <div class="section-heading center">
+                <div class="section-heading reveal">
 
-                    <span class="section-kicker">
-                        قائمتنا
-                    </span>
+                    <div class="section-label">
+
+                        <span></span>
+
+                        خدماتنا
+
+                    </div>
 
                     <h2>
-                        مختارات من
-                        <span>مطبخنا</span>
+
+                        كل ما تحتاجه
+
+                        <span>
+                            لتطوير أعمالك
+                        </span>
+
                     </h2>
 
                     <p>
-                        أطباق صُممت بعناية لتمنحك تجربة مختلفة في كل زيارة
+
+                        من الفكرة الأولى إلى المنتج النهائي،
+                        نقدم حلولًا رقمية متكاملة تساعد علامتك التجارية
+                        على النمو والمنافسة
+
                     </p>
 
                 </div>
 
 
-                <div class="menu-tabs">
-
-                    <button
-                        class="menu-tab active"
-                        data-category="all"
-                        type="button"
-                    >
-                        الكل
-                    </button>
-
-                    <button
-                        class="menu-tab"
-                        data-category="starters"
-                        type="button"
-                    >
-                        المقبلات
-                    </button>
-
-                    <button
-                        class="menu-tab"
-                        data-category="main"
-                        type="button"
-                    >
-                        الأطباق الرئيسية
-                    </button>
-
-                    <button
-                        class="menu-tab"
-                        data-category="desserts"
-                        type="button"
-                    >
-                        الحلويات
-                    </button>
-
-                    <button
-                        class="menu-tab"
-                        data-category="drinks"
-                        type="button"
-                    >
-                        المشروبات
-                    </button>
-
-                </div>
+                <div class="services-grid">
 
 
-                <div class="menu-grid">
+                    <article class="service-card featured reveal">
 
-                    <!-- Item 1 -->
-
-                    <article
-                        class="menu-card"
-                        data-category="starters"
-                    >
-
-                        <div class="menu-card-image">
+                        <div class="service-image">
 
                             <img
-                                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
-                                alt="طبق مقبلات فاخر"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Chef's Choice
-                            </span>
-
-                        </div>
-
-                        <div class="menu-card-content">
-
-                            <div class="menu-card-title">
-
-                                <h3>
-                                    طبق NÉRAVA المميز
-                                </h3>
-
-                                <span>
-                                    8.50 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                تشكيلة من المقبلات الموسمية مع لمسات الشيف الخاصة
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Item 2 -->
-
-                    <article
-                        class="menu-card"
-                        data-category="starters"
-                    >
-
-                        <div class="menu-card-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
-                                alt="مقبلات متوسطية"
-                                loading="lazy"
+                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85"
+                                alt="تطوير المواقع الإلكترونية"
                             >
 
                         </div>
 
-                        <div class="menu-card-content">
+                        <div class="service-number">
+                            01
+                        </div>
 
-                            <div class="menu-card-title">
+                        <div class="service-icon">
 
-                                <h3>
-                                    Mediterranean Selection
-                                </h3>
-
-                                <span>
-                                    7.00 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                نكهات متوسطية مختارة بعناية مع خبز طازج وصلصات منزلية
-                            </p>
+                            <i class="fa-solid fa-globe"></i>
 
                         </div>
+
+                        <h3>
+                            تطوير المواقع
+                        </h3>
+
+                        <p>
+
+                            نصمم ونطور مواقع إلكترونية سريعة،
+                            عصرية ومتجاوبة مع جميع الأجهزة،
+                            مع تجربة مستخدم مدروسة
+
+                        </p>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                        >
+
+                            اكتشف الخدمة
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
 
                     </article>
 
 
-                    <!-- Item 3 -->
+                    <article class="service-card reveal">
 
-                    <article
-                        class="menu-card"
-                        data-category="main"
-                    >
-
-                        <div class="menu-card-image">
+                        <div class="service-image">
 
                             <img
-                                src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=85"
-                                alt="طبق لحم فاخر"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Signature
-                            </span>
-
-                        </div>
-
-                        <div class="menu-card-content">
-
-                            <div class="menu-card-title">
-
-                                <h3>
-                                    Filet NÉRAVA
-                                </h3>
-
-                                <span>
-                                    22.00 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                فيليه لحم طري يقدم مع صوص الشيف وخضار موسمية
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Item 4 -->
-
-                    <article
-                        class="menu-card"
-                        data-category="main"
-                    >
-
-                        <div class="menu-card-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=85"
-                                alt="طبق باستا فاخر"
-                                loading="lazy"
+                                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=85"
+                                alt="تطوير تطبيقات الهاتف"
                             >
 
                         </div>
 
-                        <div class="menu-card-content">
+                        <div class="service-number">
+                            02
+                        </div>
 
-                            <div class="menu-card-title">
+                        <div class="service-icon">
 
-                                <h3>
-                                    Truffle Pasta
-                                </h3>
-
-                                <span>
-                                    14.50 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                باستا طازجة مع الفطر والكريمة وزيت الكمأة
-                            </p>
+                            <i class="fa-solid fa-mobile-screen-button"></i>
 
                         </div>
+
+                        <h3>
+                            تطبيقات ذكية
+                        </h3>
+
+                        <p>
+
+                            تطبيقات ويب وموبايل مصممة لتقديم
+                            تجربة استخدام سهلة وتحقيق أهداف
+                            المشروع بكفاءة
+
+                        </p>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                        >
+
+                            اكتشف الخدمة
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
 
                     </article>
 
 
-                    <!-- Item 5 -->
+                    <article class="service-card reveal">
 
-                    <article
-                        class="menu-card"
-                        data-category="desserts"
-                    >
-
-                        <div class="menu-card-image">
+                        <div class="service-image">
 
                             <img
-                                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85"
-                                alt="حلوى فاخرة"
-                                loading="lazy"
+                                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85"
+                                alt="الذكاء الاصطناعي"
                             >
 
                         </div>
 
-                        <div class="menu-card-content">
+                        <div class="service-number">
+                            03
+                        </div>
 
-                            <div class="menu-card-title">
+                        <div class="service-icon">
 
-                                <h3>
-                                    Golden Dessert
-                                </h3>
-
-                                <span>
-                                    6.50 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                حلوى الشيف مع الشوكولاتة والكراميل ولمسة ذهبية
-                            </p>
+                            <i class="fa-solid fa-brain"></i>
 
                         </div>
+
+                        <h3>
+                            حلول الذكاء الاصطناعي
+                        </h3>
+
+                        <p>
+
+                            ندمج تقنيات الذكاء الاصطناعي في الأعمال
+                            لأتمتة المهام وتحسين الإنتاجية وصناعة
+                            تجارب أكثر ذكاءً
+
+                        </p>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                        >
+
+                            اكتشف الخدمة
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
 
                     </article>
 
 
-                    <!-- Item 6 -->
+                    <article class="service-card reveal">
 
-                    <article
-                        class="menu-card"
-                        data-category="drinks"
-                    >
-
-                        <div class="menu-card-image">
+                        <div class="service-image">
 
                             <img
-                                src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85"
-                                alt="مشروب فاخر"
-                                loading="lazy"
+                                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85"
+                                alt="التحول الرقمي للشركات"
                             >
 
                         </div>
 
-                        <div class="menu-card-content">
+                        <div class="service-number">
+                            04
+                        </div>
 
-                            <div class="menu-card-title">
+                        <div class="service-icon">
 
-                                <h3>
-                                    Signature Mocktail
-                                </h3>
-
-                                <span>
-                                    5.00 JD
-                                </span>
-
-                            </div>
-
-                            <p>
-                                مزيج منعش من الفواكه والأعشاب المختارة بعناية
-                            </p>
+                            <i class="fa-solid fa-chart-pie"></i>
 
                         </div>
 
+                        <h3>
+                            التحول الرقمي
+                        </h3>
+
+                        <p>
+
+                            نساعدك على تحويل العمليات التقليدية
+                            إلى أنظمة رقمية أكثر سرعة وتنظيمًا
+                            وقابلية للنمو
+
+                        </p>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                        >
+
+                            اكتشف الخدمة
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
                     </article>
-
-                </div>
-
-
-                <div class="menu-action">
-
-                    <button
-                        class="btn btn-dark"
-                        id="showFullMenu"
-                        type="button"
-                    >
-                        عرض القائمة كاملة
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
 
                 </div>
 
@@ -537,34 +671,538 @@
 
 
         <!-- =========================
-             EXPERIENCE
+             ABOUT
         ========================== -->
 
-        <section class="experience" id="experience">
+        <section
+            class="section about-section"
+            id="about"
+        >
 
-            <div class="experience-image"></div>
+            <div class="container about-container">
 
-            <div class="experience-overlay"></div>
 
-            <div class="container experience-content">
+                <div class="about-visual reveal">
 
-                <span class="section-kicker">
-                    أكثر من مجرد طعام
-                </span>
+                    <div class="about-image-main">
 
-                <h2>
-                    عشاء تتذكره
-                    <span>لفترة طويلة</span>
-                </h2>
+                        <img
+                            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1100&q=90"
+                            alt="فريق TechNova يعمل على مشروع رقمي"
+                        >
 
-                <p>
-                    من الإضاءة إلى الموسيقى، ومن أول طبق إلى آخر لحظة
-                    كل تفصيل صُمم ليمنحك تجربة تستحق العودة
-                </p>
+                    </div>
 
-                <a href="#reservation" class="btn btn-primary">
-                    احجز تجربتك
+                    <div class="about-image-small">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&q=90"
+                            alt="اجتماع فريق تقني"
+                        >
+
+                    </div>
+
+                    <div class="about-experience">
+
+                        <strong>
+                            15+
+                        </strong>
+
+                        <span>
+                            سنة من الخبرة
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-content reveal">
+
+                    <div class="section-label">
+
+                        <span></span>
+
+                        من نحن
+
+                    </div>
+
+                    <h2>
+
+                        التقنية ليست هدفًا،
+
+                        <span>
+                            بل وسيلة للنجاح
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        في TechNova نؤمن أن التكنولوجيا الحقيقية
+                        هي التي تحل مشكلة، توفر وقتًا، وتفتح بابًا
+                        جديدًا للنمو
+
+                    </p>
+
+                    <p>
+
+                        لذلك لا نقدم حلولًا جاهزة للجميع، بل نبدأ
+                        بفهم مشروعك وأهدافك، ثم نبني الحل الذي يناسبك
+                        بدقة
+
+                    </p>
+
+
+                    <div class="about-features">
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                تصميم يركز على تجربة المستخدم
+                            </span>
+
+                        </div>
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                تطوير سريع وقابل للتوسع
+                            </span>
+
+                        </div>
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                دعم ومتابعة بعد إطلاق المشروع
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-primary"
+                    >
+
+                        تحدث معنا
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section
+            class="section projects-section"
+            id="projects"
+        >
+
+            <div class="container">
+
+                <div class="section-heading projects-heading reveal">
+
+                    <div>
+
+                        <div class="section-label">
+
+                            <span></span>
+
+                            أعمال مختارة
+
+                        </div>
+
+                        <h2>
+
+                            مشاريع صنعت
+
+                            <span>
+                                فرقًا حقيقيًا
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+                    <p>
+
+                        نماذج من الحلول الرقمية التي يمكننا تصميمها
+                        وتطويرها حسب احتياجات كل نشاط تجاري
+
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <article class="project-card project-large reveal">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=90"
+                                alt="منصة رقمية لإدارة الأعمال"
+                            >
+
+                            <div class="project-overlay"></div>
+
+                            <span class="project-category">
+                                منصة رقمية
+                            </span>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <h3>
+                                    منصة إدارة الأعمال
+                                </h3>
+
+                                <p>
+                                    نظام رقمي متكامل لإدارة العمليات
+                                    ومتابعة الأداء
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="#contact"
+                                class="project-arrow"
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&w=1000&q=90"
+                                alt="حل ذكاء اصطناعي"
+                            >
+
+                            <div class="project-overlay"></div>
+
+                            <span class="project-category">
+                                ذكاء اصطناعي
+                            </span>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <h3>
+                                    مساعد أعمال ذكي
+                                </h3>
+
+                                <p>
+                                    أتمتة المهام اليومية وتحليل البيانات
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="#contact"
+                                class="project-arrow"
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=90"
+                                alt="متجر إلكتروني"
+                            >
+
+                            <div class="project-overlay"></div>
+
+                            <span class="project-category">
+                                تجارة إلكترونية
+                            </span>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <h3>
+                                    متجر إلكتروني فاخر
+                                </h3>
+
+                                <p>
+                                    تجربة شراء حديثة وسهلة للعملاء
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="#contact"
+                                class="project-arrow"
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROCESS
+        ========================== -->
+
+        <section
+            class="section process-section"
+            id="process"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered reveal">
+
+                    <div class="section-label">
+
+                        <span></span>
+
+                        آلية العمل
+
+                    </div>
+
+                    <h2>
+
+                        من الفكرة إلى
+
+                        <span>
+                            الواقع
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        نعمل معك بخطوات واضحة حتى تحصل على منتج
+                        رقمي احترافي يخدم أهدافك
+
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <div class="process-icon">
+
+                            <i class="fa-solid fa-comments"></i>
+
+                        </div>
+
+                        <h3>
+                            نستمع
+                        </h3>
+
+                        <p>
+                            نفهم فكرتك، جمهورك وأهدافك بالتفصيل
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <div class="process-icon">
+
+                            <i class="fa-solid fa-pen-ruler"></i>
+
+                        </div>
+
+                        <h3>
+                            نخطط
+                        </h3>
+
+                        <p>
+                            نضع الهيكل وتجربة المستخدم والخطة التقنية
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <div class="process-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <h3>
+                            نبني
+                        </h3>
+
+                        <p>
+                            نحول التصميم إلى منتج سريع واحترافي
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <div class="process-icon">
+
+                            <i class="fa-solid fa-rocket"></i>
+
+                        </div>
+
+                        <h3>
+                            نطلق
+                        </h3>
+
+                        <p>
+                            نختبر المشروع ونجهزه للإطلاق والنمو
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="cta-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=90"
+                    alt="فريق تقني يعمل على مشروع"
+                >
+
+            </div>
+
+            <div class="cta-overlay"></div>
+
+            <div class="cta-glow"></div>
+
+
+            <div class="container cta-container reveal">
+
+                <div class="cta-icon">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                </div>
+
+                <div class="cta-content">
+
+                    <span>
+                        هل لديك فكرة؟
+                    </span>
+
+                    <h2>
+
+                        دعنا نحولها إلى
+
+                        <strong>
+                            شيء استثنائي
+                        </strong>
+
+                    </h2>
+
+                    <p>
+
+                        أخبرنا عن مشروعك وسنساعدك على اختيار الحل
+                        التقني المناسب
+
+                    </p>
+
+                </div>
+
+                <a
+                    href="#contact"
+                    class="btn btn-white"
+                >
+
+                    ابدأ المحادثة
+
                     <i class="fa-solid fa-arrow-left"></i>
+
                 </a>
 
             </div>
@@ -573,228 +1211,118 @@
 
 
         <!-- =========================
-             GALLERY
+             CONTACT
         ========================== -->
 
-        <section class="gallery-section section-padding" id="gallery">
+        <section
+            class="section contact-section"
+            id="contact"
+        >
 
-            <div class="container">
+            <div class="container contact-container">
 
-                <div class="section-heading center">
 
-                    <span class="section-kicker">
-                        من داخل NÉRAVA
-                    </span>
+                <div class="contact-content reveal">
+
+                    <div class="section-label">
+
+                        <span></span>
+
+                        تواصل معنا
+
+                    </div>
 
                     <h2>
-                        لحظات من
-                        <span>تجربتنا</span>
+
+                        جاهز لبدء
+
+                        <span>
+                            مشروعك؟
+                        </span>
+
                     </h2>
 
                     <p>
-                        بعض التفاصيل التي تجعل كل زيارة مختلفة
+
+                        أخبرنا عن فكرتك أو التحدي الذي تواجهه،
+                        وسنتواصل معك لمناقشة أفضل حل
+
                     </p>
 
-                </div>
+
+                    <div class="contact-details">
 
 
-                <div class="gallery-grid">
-
-                    <figure class="gallery-item gallery-large">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
-                            alt="داخل المطعم"
-                            loading="lazy"
+                        <a
+                            href="mailto:hello@technova.example"
+                            class="contact-detail"
                         >
 
-                    </figure>
+                            <div class="contact-icon">
 
+                                <i class="fa-solid fa-envelope"></i>
 
-                    <figure class="gallery-item">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85"
-                            alt="طبق طعام فاخر"
-                            loading="lazy"
-                        >
-
-                    </figure>
-
-
-                    <figure class="gallery-item">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85"
-                            alt="أجواء المطعم"
-                            loading="lazy"
-                        >
-
-                    </figure>
-
-
-                    <figure class="gallery-item">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=900&q=85"
-                            alt="طاولة طعام"
-                            loading="lazy"
-                        >
-
-                    </figure>
-
-
-                    <figure class="gallery-item gallery-wide">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85"
-                            alt="تجربة طعام راقية"
-                            loading="lazy"
-                        >
-
-                    </figure>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             REVIEWS
-        ========================== -->
-
-        <section class="reviews-section section-padding" id="reviews">
-
-            <div class="container">
-
-                <div class="section-heading center">
-
-                    <span class="section-kicker">
-                        آراء الضيوف
-                    </span>
-
-                    <h2>
-                        كلمات من
-                        <span>زوارنا</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="reviews-grid">
-
-                    <article class="review-card">
-
-                        <div class="review-stars">
-                            ★ ★ ★ ★ ★
-                        </div>
-
-                        <p>
-                            تجربة جميلة جدًا من أول لحظة
-                            الأجواء هادئة والطعام كان ممتازًا
-                            والخدمة على مستوى رائع
-                        </p>
-
-                        <div class="review-author">
-                            <strong>سارة</strong>
-                            <span>زائرة</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="review-card featured">
-
-                        <div class="review-stars">
-                            ★ ★ ★ ★ ★
-                        </div>
-
-                        <p>
-                            المكان مختلف فعلًا
-                            التفاصيل الصغيرة في التصميم والطعام
-                            جعلت التجربة مميزة جدًا
-                        </p>
-
-                        <div class="review-author">
-                            <strong>عمر</strong>
-                            <span>زائر</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="review-card">
-
-                        <div class="review-stars">
-                            ★ ★ ★ ★ ★
-                        </div>
-
-                        <p>
-                            من أفضل التجارب التي خضتها
-                            الأطباق جميلة والطعم ممتاز والأجواء راقية
-                        </p>
-
-                        <div class="review-author">
-                            <strong>ليان</strong>
-                            <span>زائرة</span>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RESERVATION
-        ========================== -->
-
-        <section class="reservation-section section-padding" id="reservation">
-
-            <div class="container reservation-grid">
-
-                <div class="reservation-content">
-
-                    <span class="section-kicker">
-                        احجز تجربتك
-                    </span>
-
-                    <h2>
-                        طاولتك
-                        <span>بانتظارك</span>
-                    </h2>
-
-                    <p>
-                        اختر التاريخ والوقت المناسبين لك
-                        ودعنا نهتم بباقي التفاصيل
-                    </p>
-
-                    <div class="reservation-info">
-
-                        <div class="info-item">
-
-                            <i class="fa-regular fa-clock"></i>
-
-                            <div>
-                                <strong>ساعات العمل</strong>
-                                <span>يوميًا من 12:00 ظهرًا حتى 11:30 مساءً</span>
                             </div>
 
-                        </div>
+                            <div>
+
+                                <span>
+                                    البريد الإلكتروني
+                                </span>
+
+                                <strong>
+                                    hello@technova.example
+                                </strong>
+
+                            </div>
+
+                        </a>
 
 
-                        <div class="info-item">
+                        <a
+                            href="tel:+962700000000"
+                            class="contact-detail"
+                        >
 
-                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                            </div>
 
                             <div>
-                                <strong>الموقع</strong>
-                                <span>عمّان، الأردن</span>
+
+                                <span>
+                                    الهاتف
+                                </span>
+
+                                <strong dir="ltr">
+                                    +962 7 0000 0000
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    الموقع
+                                </span>
+
+                                <strong>
+                                    الأردن
+                                </strong>
+
                             </div>
 
                         </div>
@@ -804,11 +1332,28 @@
                 </div>
 
 
-                <div class="reservation-form-wrapper">
+                <div class="contact-form-wrapper reveal">
 
-                    <form id="reservationForm" class="reservation-form">
+                    <form
+                        id="contactForm"
+                        class="contact-form"
+                    >
+
+                        <div class="form-header">
+
+                            <h3>
+                                أرسل لنا رسالتك
+                            </h3>
+
+                            <p>
+                                سنراجع رسالتك ونتواصل معك قريبًا
+                            </p>
+
+                        </div>
+
 
                         <div class="form-row">
+
 
                             <div class="form-group">
 
@@ -829,94 +1374,18 @@
 
                             <div class="form-group">
 
-                                <label for="phone">
-                                    رقم الهاتف
+                                <label for="email">
+                                    البريد الإلكتروني
                                 </label>
 
                                 <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="07XXXXXXXX"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    dir="ltr"
                                     required
                                 >
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-
-                                <label for="date">
-                                    التاريخ
-                                </label>
-
-                                <input
-                                    type="date"
-                                    id="date"
-                                    name="date"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="time">
-                                    الوقت
-                                </label>
-
-                                <select
-                                    id="time"
-                                    name="time"
-                                    required
-                                >
-
-                                    <option value="">
-                                        اختر الوقت
-                                    </option>
-
-                                    <option value="18:00">
-                                        6:00 مساءً
-                                    </option>
-
-                                    <option value="18:30">
-                                        6:30 مساءً
-                                    </option>
-
-                                    <option value="19:00">
-                                        7:00 مساءً
-                                    </option>
-
-                                    <option value="19:30">
-                                        7:30 مساءً
-                                    </option>
-
-                                    <option value="20:00">
-                                        8:00 مساءً
-                                    </option>
-
-                                    <option value="20:30">
-                                        8:30 مساءً
-                                    </option>
-
-                                    <option value="21:00">
-                                        9:00 مساءً
-                                    </option>
-
-                                    <option value="21:30">
-                                        9:30 مساءً
-                                    </option>
-
-                                    <option value="22:00">
-                                        10:00 مساءً
-                                    </option>
-
-                                </select>
 
                             </div>
 
@@ -925,50 +1394,42 @@
 
                         <div class="form-group">
 
-                            <label for="guests">
-                                عدد الأشخاص
+                            <label for="service">
+                                الخدمة المطلوبة
                             </label>
 
                             <select
-                                id="guests"
-                                name="guests"
+                                id="service"
+                                name="service"
                                 required
                             >
 
-                                <option value="">
-                                    اختر العدد
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    اختر الخدمة
                                 </option>
 
-                                <option value="1">
-                                    شخص واحد
+                                <option value="website">
+                                    تطوير موقع إلكتروني
                                 </option>
 
-                                <option value="2">
-                                    شخصان
+                                <option value="app">
+                                    تطوير تطبيق
                                 </option>
 
-                                <option value="3">
-                                    3 أشخاص
+                                <option value="ai">
+                                    حل ذكاء اصطناعي
                                 </option>
 
-                                <option value="4">
-                                    4 أشخاص
+                                <option value="digital">
+                                    تحول رقمي
                                 </option>
 
-                                <option value="5">
-                                    5 أشخاص
-                                </option>
-
-                                <option value="6">
-                                    6 أشخاص
-                                </option>
-
-                                <option value="7">
-                                    7 أشخاص
-                                </option>
-
-                                <option value="8">
-                                    8 أشخاص
+                                <option value="other">
+                                    أخرى
                                 </option>
 
                             </select>
@@ -978,15 +1439,16 @@
 
                         <div class="form-group">
 
-                            <label for="notes">
-                                ملاحظات إضافية
+                            <label for="message">
+                                أخبرنا عن مشروعك
                             </label>
 
                             <textarea
-                                id="notes"
-                                name="notes"
-                                rows="4"
-                                placeholder="هل لديك أي طلب خاص"
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="اكتب تفاصيل فكرتك أو مشروعك..."
+                                required
                             ></textarea>
 
                         </div>
@@ -996,138 +1458,21 @@
                             type="submit"
                             class="btn btn-primary form-submit"
                         >
-                            تأكيد طلب الحجز
-                            <i class="fa-solid fa-arrow-left"></i>
+
+                            إرسال الرسالة
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
                         </button>
 
+
+                        <div
+                            class="form-message"
+                            id="formMessage"
+                            role="status"
+                        ></div>
+
                     </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="contact-section" id="contact">
-
-            <div class="container contact-grid">
-
-                <div class="contact-content">
-
-                    <span class="section-kicker">
-                        تواصل معنا
-                    </span>
-
-                    <h2>
-                        نراك
-                        <span>قريبًا</span>
-                    </h2>
-
-                    <p>
-                        يسعدنا استقبالكم في NÉRAVA
-                        لقضاء أمسية مختلفة بين الطعام والأجواء الراقية
-                    </p>
-
-                    <div class="contact-details">
-
-                        <div class="contact-item">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            <div>
-
-                                <strong>
-                                    الموقع
-                                </strong>
-
-                                <span>
-                                    عمّان، الأردن
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-item">
-
-                            <i class="fa-solid fa-phone"></i>
-
-                            <div>
-
-                                <strong>
-                                    الهاتف
-                                </strong>
-
-                                <span>
-                                    07 9000 0000
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-item">
-
-                            <i class="fa-regular fa-envelope"></i>
-
-                            <div>
-
-                                <strong>
-                                    البريد الإلكتروني
-                                </strong>
-
-                                <span>
-                                    hello@nerava.example
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="social-links">
-
-                        <a href="#" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-
-                        <a href="#" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-
-                        <a href="#" aria-label="TikTok">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-map">
-
-                    <div class="map-placeholder">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        <span>
-                            عمّان، الأردن
-                        </span>
-
-                        <small>
-                            موقع تجريبي ضمن مشروع Portfolio
-                        </small>
-
-                    </div>
 
                 </div>
 
@@ -1142,67 +1487,149 @@
          FOOTER
     ========================== -->
 
-    <footer class="site-footer">
+    <footer class="footer">
 
-        <div class="container footer-grid">
+        <div class="container footer-container">
+
 
             <div class="footer-brand">
 
-                <a href="#home" class="logo">
-                    <span class="logo-main">NÉRAVA</span>
-                    <span class="logo-sub">RESTAURANT & DINING</span>
+                <a
+                    href="#home"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                    </span>
+
+                    <span class="logo-text">
+
+                        Tech<span>Nova</span>
+
+                    </span>
+
                 </a>
 
+
                 <p>
-                    تجربة طعام مصممة لتبقى في الذاكرة
+
+                    حلول رقمية حديثة تساعد الأعمال على النمو
+                    والمنافسة في عالم متغير
+
                 </p>
 
+
+                <div class="social-links">
+
+
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="X"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-column">
 
-                <h3>
+                <h4>
                     روابط سريعة
-                </h3>
+                </h4>
 
-                <a href="#story">قصتنا</a>
-                <a href="#menu">القائمة</a>
-                <a href="#experience">التجربة</a>
-                <a href="#gallery">المعرض</a>
+                <a href="#home">
+                    الرئيسية
+                </a>
 
-            </div>
+                <a href="#services">
+                    خدماتنا
+                </a>
 
+                <a href="#about">
+                    من نحن
+                </a>
 
-            <div class="footer-links">
-
-                <h3>
-                    معلومات
-                </h3>
-
-                <a href="#reservation">الحجوزات</a>
-                <a href="#contact">تواصل معنا</a>
-                <a href="#reviews">آراء الضيوف</a>
+                <a href="#projects">
+                    أعمالنا
+                </a>
 
             </div>
 
 
-            <div class="footer-contact">
+            <div class="footer-column">
 
-                <h3>
+                <h4>
+                    خدماتنا
+                </h4>
+
+                <a href="#services">
+                    تطوير المواقع
+                </a>
+
+                <a href="#services">
+                    التطبيقات
+                </a>
+
+                <a href="#services">
+                    الذكاء الاصطناعي
+                </a>
+
+                <a href="#services">
+                    التحول الرقمي
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
                     تواصل
-                </h3>
+                </h4>
+
+                <a href="mailto:hello@technova.example">
+                    hello@technova.example
+                </a>
+
+                <a
+                    href="tel:+962700000000"
+                    dir="ltr"
+                >
+                    +962 7 0000 0000
+                </a>
 
                 <span>
-                    عمّان، الأردن
-                </span>
-
-                <span>
-                    07 9000 0000
-                </span>
-
-                <span>
-                    hello@nerava.example
+                    الأردن
                 </span>
 
             </div>
@@ -1210,15 +1637,32 @@
         </div>
 
 
-        <div class="container footer-bottom">
+        <div class="footer-bottom">
 
-            <span>
-                © 2026 NÉRAVA Restaurant
-            </span>
+            <div class="container">
 
-            <span>
-                مشروع تجريبي ضمن معرض الأعمال
-            </span>
+                <p>
+
+                    ©
+                    <span id="currentYear"></span>
+                    TechNova، جميع الحقوق محفوظة
+
+                </p>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+                        سياسة الخصوصية
+                    </a>
+
+                    <a href="#">
+                        الشروط والأحكام
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -1226,44 +1670,22 @@
 
 
     <!-- =========================
-         NOTIFICATION
+         BACK TO TOP
     ========================== -->
 
-    <div
-        class="notification"
-        id="notification"
-        role="status"
-        aria-live="polite"
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="العودة إلى الأعلى"
     >
 
-        <div class="notification-icon">
-            <i class="fa-solid fa-check"></i>
-        </div>
+        <i class="fa-solid fa-arrow-up"></i>
 
-        <div class="notification-content">
-
-            <strong>
-                تم استلام طلبك
-            </strong>
-
-            <span>
-                سنتواصل معك لتأكيد الحجز
-            </span>
-
-        </div>
-
-        <button
-            type="button"
-            id="closeNotification"
-            aria-label="إغلاق الإشعار"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-    </div>
+    </button>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

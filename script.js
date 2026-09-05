@@ -1,643 +1,369 @@
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    /* =========================
-       ELEMENTS
-    ========================== */
 
-    const header = document.getElementById("header");
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
+
+if (menuToggle && nav) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen = nav.classList.toggle("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen.toString()
+        );
+
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
+
+    });
+
 
     const navLinks = document.querySelectorAll(".nav-link");
-
-    const menuTabs = document.querySelectorAll(".menu-tab");
-    const menuCards = document.querySelectorAll(".menu-card");
-    const showFullMenu = document.getElementById("showFullMenu");
-
-    const reservationForm = document.getElementById("reservationForm");
-    const dateInput = document.getElementById("date");
-    const phoneInput = document.getElementById("phone");
-
-    const notification = document.getElementById("notification");
-    const closeNotification = document.getElementById("closeNotification");
-
-
-    /* =========================
-       MOBILE MENU
-    ========================== */
-
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener("click", () => {
-
-            mainNav.classList.toggle("open");
-
-        });
-
-    }
-
-
-    /* =========================
-       CLOSE MOBILE MENU
-       AFTER CLICKING LINK
-    ========================== */
 
     navLinks.forEach((link) => {
 
         link.addEventListener("click", () => {
 
-            if (mainNav) {
-                mainNav.classList.remove("open");
-            }
+            nav.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
 
         });
 
     });
 
+}
 
-    /* =========================
-       HEADER ON SCROLL
-    ========================== */
 
-    function updateHeader() {
+/* =========================
+   HEADER ON SCROLL
+========================= */
 
-        if (!header) {
-            return;
-        }
+const header = document.getElementById("header");
 
-        if (window.scrollY > 50) {
+function updateHeader() {
 
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
-
+    if (!header) {
+        return;
     }
 
-    window.addEventListener("scroll", updateHeader);
-
-    updateHeader();
-
-
-    /* =========================
-       ACTIVE NAVIGATION
-    ========================== */
-
-    const sections = document.querySelectorAll("main section[id]");
-
-    function updateActiveNav() {
-
-        let currentSection = "";
-
-        sections.forEach((section) => {
-
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-
-                currentSection = section.getAttribute("id");
-
-            }
-
-        });
-
-
-        navLinks.forEach((link) => {
-
-            link.classList.remove("active");
-
-            const linkTarget = link.getAttribute("href");
-
-            if (linkTarget === `#${currentSection}`) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
     }
 
-    window.addEventListener("scroll", updateActiveNav);
+}
 
-    updateActiveNav();
+window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+);
 
-
-    /* =========================
-       MENU FILTER
-    ========================== */
-
-    menuTabs.forEach((tab) => {
-
-        tab.addEventListener("click", () => {
-
-            const category = tab.getAttribute("data-category");
+updateHeader();
 
 
-            menuTabs.forEach((item) => {
+/* =========================
+   ACTIVE NAV LINK
+========================= */
 
-                item.classList.remove("active");
+const sections = document.querySelectorAll(
+    "main section[id]"
+);
 
-            });
+const navigationLinks = document.querySelectorAll(
+    ".nav-link"
+);
 
-            tab.classList.add("active");
+function updateActiveNavigation() {
+
+    let currentSection = "";
+
+    const scrollPosition =
+        window.scrollY + 180;
+
+    sections.forEach((section) => {
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+        ) {
+            currentSection = section.id;
+        }
+
+    });
+
+    navigationLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        const href = link.getAttribute("href");
+
+        if (href === `#${currentSection}`) {
+            link.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+);
+
+updateActiveNavigation();
 
 
-            menuCards.forEach((card) => {
+/* =========================
+   SCROLL REVEAL
+========================= */
 
-                const cardCategory = card.getAttribute("data-category");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
+const revealObserver =
+    new IntersectionObserver(
+        (entries, observer) => {
 
-                if (
-                    category === "all" ||
-                    category === cardCategory
-                ) {
+            entries.forEach((entry) => {
 
-                    card.classList.remove("hidden");
+                if (entry.isIntersecting) {
 
-                } else {
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
-                    card.classList.add("hidden");
+                    observer.unobserve(
+                        entry.target
+                    );
 
                 }
 
             });
 
-        });
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
-    });
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
 
 
-    /* =========================
-       SHOW FULL MENU
-    ========================== */
+/* =========================
+   BACK TO TOP
+========================= */
 
-    if (showFullMenu) {
+const backToTop =
+    document.getElementById("backToTop");
 
-        showFullMenu.addEventListener("click", () => {
+function updateBackToTop() {
 
-            menuCards.forEach((card) => {
+    if (!backToTop) {
+        return;
+    }
 
-                card.classList.remove("hidden");
+    if (window.scrollY > 500) {
 
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateBackToTop,
+    { passive: true }
+);
+
+if (backToTop) {
+
+    backToTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
 
+        }
+    );
 
-            menuTabs.forEach((tab) => {
+}
 
-                tab.classList.remove("active");
-
-            });
-
-
-            const allTab = document.querySelector(
-                '.menu-tab[data-category="all"]'
-            );
+updateBackToTop();
 
 
-            if (allTab) {
+/* =========================
+   CONTACT FORM
+========================= */
 
-                allTab.classList.add("active");
+const contactForm =
+    document.getElementById("contactForm");
 
-            }
-
-
-            showFullMenu.innerHTML =
-                'تم عرض القائمة كاملة <i class="fa-solid fa-check"></i>';
-
-        });
-
-    }
+const formMessage =
+    document.getElementById("formMessage");
 
 
-    /* =========================
-       MINIMUM RESERVATION DATE
-    ========================== */
+if (contactForm && formMessage) {
 
-    if (dateInput) {
-
-        const today = new Date();
-
-        const year = today.getFullYear();
-
-        const month = String(
-            today.getMonth() + 1
-        ).padStart(2, "0");
-
-        const day = String(
-            today.getDate()
-        ).padStart(2, "0");
-
-
-        const todayString =
-            `${year}-${month}-${day}`;
-
-
-        dateInput.min = todayString;
-
-    }
-
-
-    /* =========================
-       PHONE FORMATTING
-    ========================== */
-
-    if (phoneInput) {
-
-        phoneInput.addEventListener("input", () => {
-
-            let value = phoneInput.value;
-
-            value = value.replace(/\D/g, "");
-
-            if (value.length > 10) {
-
-                value = value.substring(0, 10);
-
-            }
-
-            phoneInput.value = value;
-
-        });
-
-    }
-
-
-    /* =========================
-       RESERVATION FORM
-    ========================== */
-
-    if (reservationForm) {
-
-        reservationForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener(
+        "submit",
+        (event) => {
 
             event.preventDefault();
-
 
             const name =
                 document.getElementById("name").value.trim();
 
-            const phone =
-                document.getElementById("phone").value.trim();
+            const email =
+                document.getElementById("email").value.trim();
 
-            const date =
-                document.getElementById("date").value;
+            const service =
+                document.getElementById("service").value;
 
-            const time =
-                document.getElementById("time").value;
+            const message =
+                document.getElementById("message").value.trim();
 
-            const guests =
-                document.getElementById("guests").value;
-
-
-            /* =========================
-               BASIC VALIDATION
-            ========================== */
 
             if (
-                name === "" ||
-                phone === "" ||
-                date === "" ||
-                time === "" ||
-                guests === ""
+                !name ||
+                !email ||
+                !service ||
+                !message
             ) {
 
-                showNotification(
-                    "يرجى إكمال جميع البيانات المطلوبة",
-                    "تأكد من تعبئة الحقول قبل إرسال الحجز"
-                );
+                formMessage.textContent =
+                    "يرجى تعبئة جميع الحقول المطلوبة.";
+
+                formMessage.className =
+                    "form-message error";
 
                 return;
 
             }
 
 
-            /* =========================
-               PHONE VALIDATION
-            ========================== */
-
-            if (!/^07\d{8}$/.test(phone)) {
-
-                showNotification(
-                    "رقم الهاتف غير صحيح",
-                    "يرجى إدخال رقم أردني مكون من 10 أرقام ويبدأ بـ 07"
-                );
-
-                phoneInput.focus();
-
-                return;
-
-            }
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-            /* =========================
-               DATE VALIDATION
-            ========================== */
+            if (!emailPattern.test(email)) {
 
-            const selectedDate =
-                new Date(`${date}T00:00:00`);
+                formMessage.textContent =
+                    "يرجى إدخال بريد إلكتروني صحيح.";
 
-            const today =
-                new Date();
-
-            today.setHours(0, 0, 0, 0);
-
-
-            if (selectedDate < today) {
-
-                showNotification(
-                    "التاريخ غير صحيح",
-                    "يرجى اختيار تاريخ اليوم أو تاريخًا قادمًا"
-                );
-
-                dateInput.focus();
+                formMessage.className =
+                    "form-message error";
 
                 return;
 
             }
 
 
-            /* =========================
-               SUCCESS
-            ========================== */
+            formMessage.textContent =
+                "تم استلام رسالتك بنجاح. شكرًا لتواصلك معنا.";
 
-            showNotification(
-                "تم استلام طلبك",
-                "سنتواصل معك لتأكيد الحجز"
-            );
+            formMessage.className =
+                "form-message success";
 
 
-            reservationForm.reset();
+            contactForm.reset();
 
 
-            if (dateInput) {
+            setTimeout(() => {
 
-                const currentDate =
-                    new Date();
+                formMessage.textContent = "";
 
-                const year =
-                    currentDate.getFullYear();
+                formMessage.className =
+                    "form-message";
 
-                const month =
-                    String(
-                        currentDate.getMonth() + 1
-                    ).padStart(2, "0");
-
-                const day =
-                    String(
-                        currentDate.getDate()
-                    ).padStart(2, "0");
-
-
-                dateInput.min =
-                    `${year}-${month}-${day}`;
-
-            }
-
-        });
-
-    }
-
-
-    /* =========================
-       NOTIFICATION
-    ========================== */
-
-    let notificationTimer;
-
-
-    function showNotification(title, message) {
-
-        if (!notification) {
-            return;
-        }
-
-
-        const titleElement =
-            notification.querySelector(
-                ".notification-content strong"
-            );
-
-
-        const messageElement =
-            notification.querySelector(
-                ".notification-content span"
-            );
-
-
-        if (titleElement) {
-
-            titleElement.textContent = title;
+            }, 5000);
 
         }
-
-
-        if (messageElement) {
-
-            messageElement.textContent = message;
-
-        }
-
-
-        notification.classList.add("show");
-
-
-        clearTimeout(notificationTimer);
-
-
-        notificationTimer = setTimeout(() => {
-
-            notification.classList.remove("show");
-
-        }, 5000);
-
-    }
-
-
-    /* =========================
-       CLOSE NOTIFICATION
-    ========================== */
-
-    if (closeNotification) {
-
-        closeNotification.addEventListener("click", () => {
-
-            notification.classList.remove("show");
-
-            clearTimeout(notificationTimer);
-
-        });
-
-    }
-
-
-    /* =========================
-       REVEAL ELEMENTS
-    ========================== */
-
-    const revealElements = document.querySelectorAll(
-        ".story-content, .story-images, .menu-card, .experience-content, .gallery-item, .review-card, .reservation-content, .reservation-form-wrapper, .contact-content, .contact-map"
     );
 
-
-    revealElements.forEach((element) => {
-
-        element.classList.add("reveal");
-
-    });
+}
 
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
+/* =========================
+   CURRENT YEAR
+========================= */
 
-                entries.forEach((entry) => {
+const currentYear =
+    document.getElementById("currentYear");
 
-                    if (entry.isIntersecting) {
+if (currentYear) {
 
-                        entry.target.classList.add("visible");
+    currentYear.textContent =
+        new Date().getFullYear();
 
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
+}
 
 
-    revealElements.forEach((element) => {
+/* =========================
+   CLOSE MENU WITH ESCAPE
+========================= */
 
-        revealObserver.observe(element);
-
-    });
-
-
-    /* =========================
-       SMOOTH SCROLL
-    ========================== */
-
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach((link) => {
-
-        link.addEventListener("click", (event) => {
-
-            const targetId =
-                link.getAttribute("href");
-
-
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-
-                return;
-
-            }
-
-
-            const target =
-                document.querySelector(targetId);
-
-
-            if (!target) {
-
-                return;
-
-            }
-
-
-            event.preventDefault();
-
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-
-            const targetPosition =
-                target.offsetTop - headerHeight;
-
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-            });
-
-        });
-
-    });
-
-
-    /* =========================
-       ESCAPE KEY
-    ========================== */
-
-    document.addEventListener("keydown", (event) => {
-
-        if (event.key === "Escape") {
-
-            if (mainNav) {
-
-                mainNav.classList.remove("open");
-
-            }
-
-
-            if (notification) {
-
-                notification.classList.remove("show");
-
-            }
-
-        }
-
-    });
-
-
-    /* =========================
-       CLOSE MOBILE MENU
-       WHEN CLICKING OUTSIDE
-    ========================== */
-
-    document.addEventListener("click", (event) => {
+document.addEventListener(
+    "keydown",
+    (event) => {
 
         if (
-            mainNav &&
-            menuToggle &&
-            mainNav.classList.contains("open") &&
-            !mainNav.contains(event.target) &&
-            !menuToggle.contains(event.target)
+            event.key === "Escape" &&
+            nav &&
+            nav.classList.contains("open")
         ) {
 
-            mainNav.classList.remove("open");
+            nav.classList.remove("open");
+
+            if (menuToggle) {
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+            document.body.classList.remove(
+                "menu-open"
+            );
 
         }
 
-    });
-
-
-    /* =========================
-       CONSOLE MESSAGE
-    ========================== */
-
-    console.log(
-        "NÉRAVA Restaurant website loaded successfully"
-    );
-
-});
+    }
+);
